@@ -17,6 +17,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     double numero1, numero2, resultado;
 
+    Boolean operacion = false;
+    Boolean num = false;
+    Boolean prueba = false;
+
     String operador;
 
     @Override
@@ -49,113 +53,212 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (view.getId()){
 
             case R.id.btn0:
+                if (prueba==true){
+                    etOperation.setText("");
+                    prueba = false;
+                }
+                num = true;
                 etConcatenar = (EditText)findViewById(R.id.et_operation);
                 etOperation.setText(etConcatenar.getText().toString() + "0");
                 break;
 
             case R.id.btn1:
+                if (prueba==true){
+                    etOperation.setText("");
+                    prueba = false;
+                }
+                num = true;
                 etConcatenar = (EditText)findViewById(R.id.et_operation);
                 etOperation.setText(etConcatenar.getText().toString() + "1");
                 break;
 
             case R.id.btn2:
+                if (prueba==true){
+                    etOperation.setText("");
+                    prueba = false;
+                }
+                num = true;
                 etConcatenar = (EditText)findViewById(R.id.et_operation);
                 etOperation.setText(etConcatenar.getText().toString() + "2");
                 break;
 
             case R.id.btn3:
+                if (prueba==true){
+                    etOperation.setText("");
+                    prueba = false;
+                }
+                num = true;
                 etConcatenar = (EditText)findViewById(R.id.et_operation);
                 etOperation.setText(etConcatenar.getText().toString() + "3");
                 break;
 
             case R.id.btn4:
+                if (prueba==true){
+                    etOperation.setText("");
+                    prueba = false;
+                }
+                num = true;
                 etConcatenar = (EditText)findViewById(R.id.et_operation);
                 etOperation.setText(etConcatenar.getText().toString() + "4");
                 break;
 
             case R.id.btn5:
+                if (prueba==true){
+                    etOperation.setText("");
+                    prueba = false;
+                }
+                num = true;
                 etConcatenar = (EditText)findViewById(R.id.et_operation);
                 etOperation.setText(etConcatenar.getText().toString() + "5");
                 break;
 
             case R.id.btn6:
+                if (prueba==true){
+                    etOperation.setText("");
+                    prueba = false;
+                }
+                num = true;
                 etConcatenar = (EditText)findViewById(R.id.et_operation);
                 etOperation.setText(etConcatenar.getText().toString() + "6");
                 break;
 
             case R.id.btn7:
+                if (prueba==true){
+                    etOperation.setText("");
+                    prueba = false;
+                }
+                num = true;
                 etConcatenar = (EditText)findViewById(R.id.et_operation);
                 etOperation.setText(etConcatenar.getText().toString() + "7");
                 break;
 
             case R.id.btn8:
+                if (prueba==true){
+                    etOperation.setText("");
+                    prueba = false;
+                }
+                num = true;
                 etConcatenar = (EditText)findViewById(R.id.et_operation);
                 etOperation.setText(etConcatenar.getText().toString() + "8");
                 break;
 
             case R.id.btn9:
+                if (prueba==true){
+                    etOperation.setText("");
+                    prueba = false;
+                }
+                num = true;
                 etConcatenar = (EditText)findViewById(R.id.et_operation);
                 etOperation.setText(etConcatenar.getText().toString() + "9");
                 break;
 
             case R.id.btn_divide:
-                operador = "/";
-                etConcatenar = (EditText)findViewById(R.id.et_operation);
-                numero1 = Double.parseDouble(etConcatenar.getText().toString());
-                etOperation.setText("");
+                if(num!=true){
+                    etOperation.setText("Que le pasa subnormal?");
+                } else{
+                    if(operacion!=true){
+                        operacion = true;
+                        operador = "/";
+                        etConcatenar = (EditText)findViewById(R.id.et_operation);
+                        numero1 = Double.parseDouble(etConcatenar.getText().toString());
+                        etOperation.setText("");
+                    } else{
+                        etOperation.setText("tranquilo rasta");
+                        prueba = true;
+                    }
+                }
                 break;
 
             case R.id.btn_minus:
-                operador = "-";
-                etConcatenar = (EditText)findViewById(R.id.et_operation);
-                numero1 = Double.parseDouble(etConcatenar.getText().toString());
-                etOperation.setText("");
+                if(num!=true){
+                    etOperation.setText("Que le pasa subnormal?");
+                } else{
+                    if(operacion!=true) {
+                        operacion = true;
+                        operador = "-";
+                        etConcatenar = (EditText) findViewById(R.id.et_operation);
+                        numero1 = Double.parseDouble(etConcatenar.getText().toString());
+                        etOperation.setText("");
+                    } else{
+                        etOperation.setText("tranquilo rasta");
+                        prueba = true;
+                    }
+                }
                 break;
 
             case R.id.btn_multiply:
-                operador = "*";
-                etConcatenar = (EditText)findViewById(R.id.et_operation);
-                numero1 = Double.parseDouble(etConcatenar.getText().toString());
-                etOperation.setText("");
+                if(num!=true){
+                    etOperation.setText("Que le pasa subnormal?");
+                } else{
+                    if(operacion!=true) {
+                        operacion = true;
+                        operador = "*";
+                        etConcatenar = (EditText) findViewById(R.id.et_operation);
+                        numero1 = Double.parseDouble(etConcatenar.getText().toString());
+                        etOperation.setText("");
+                    } else{
+                        etOperation.setText("tranquilo rasta");
+                        prueba = true;
+                    }
+                }
                 break;
 
             case R.id.btn_plus:
-                operador = "+";
-                etConcatenar = (EditText)findViewById(R.id.et_operation);
-                numero1 = Double.parseDouble(etConcatenar.getText().toString());
-                etOperation.setText("");
+                if(num!=true){
+                    etOperation.setText("Que le pasa subnormal?");
+                } else{
+                    if(operacion!=true) {
+                        operacion = true;
+                        operador = "+";
+                        etConcatenar = (EditText) findViewById(R.id.et_operation);
+                        numero1 = Double.parseDouble(etConcatenar.getText().toString());
+                        etOperation.setText("");
+                    } else{
+                        etOperation.setText("tranquilo rasta");
+                        prueba = true;
+                    }
+                }
                 break;
 
             case R.id.btn_total:
-                etConcatenar = (EditText)findViewById(R.id.et_operation);
-                numero2 = Double.parseDouble(etConcatenar.getText().toString());
-                if(operador.equals("+")){
-                    etOperation.setText("");
-                    resultado = numero1 + numero2;
-                }
-                if(operador.equals("-")){
-                    etOperation.setText("");
-                    resultado = numero1 - numero2;
-                }
-                if(operador.equals("*")){
-                    etOperation.setText("");
-                    resultado = numero1 * numero2;
-                }
-                if(operador.equals("/")){
-                    etOperation.setText("");
-                    if(numero2 != 0){
-                        resultado = numero1 / numero2;
-                    }else {
-                        etOperation.setText("Infinito");
+                if(num!=true){
+                    etOperation.setText("Que pendejada está haciendo?");
+                }else{
+                    operacion = false;
+                    etConcatenar = (EditText)findViewById(R.id.et_operation);
+                    numero2 = Double.parseDouble(etConcatenar.getText().toString());
+                    if(operador.equals("+")){
+                        etOperation.setText("");
+                        resultado = numero1 + numero2;
                     }
+                    if(operador.equals("-")){
+                        etOperation.setText("");
+                        resultado = numero1 - numero2;
+                    }
+                    if(operador.equals("*")){
+                        etOperation.setText("");
+                        resultado = numero1 * numero2;
+                    }
+                    if(operador.equals("/")){
+                        etOperation.setText("");
+                        if(numero2 != 0){
+                            resultado = numero1 / numero2;
+                        }else {
+                            etOperation.setText("Infinito");
+                        }
+                    }
+                    etOperation.setText(String.valueOf(resultado));
+                    num = true;
+                    operacion = false;
                 }
-                etOperation.setText(String.valueOf(resultado));
                 break;
 
             case R.id.btn_clear:
-                numero1 = 0;
-                numero2 = 0;
+                num = false;
+                numero1 = -1;
+                numero2 = -1;
                 etOperation.setText("");
+                operacion = false;
                 break;
         }
     }
