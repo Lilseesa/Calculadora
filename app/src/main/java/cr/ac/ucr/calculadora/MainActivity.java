@@ -223,6 +223,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btn_total:
                 if(num!=true){
                     etOperation.setText("Que pendejada está haciendo?");
+                    prueba = true;
                 }else{
                     operacion = false;
                     etConcatenar = (EditText)findViewById(R.id.et_operation);
